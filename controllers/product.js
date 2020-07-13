@@ -279,7 +279,7 @@ exports.listSearch = (req, res) => {
     }
 }
 
-exports.decreaseQuantity = (req, res) => {
+exports.decreaseQuantity = (req, res, next) => {
     let bulkOps = req.body.order.products.map((item) => {
         return {
             updateOne: {
